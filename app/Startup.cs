@@ -100,6 +100,8 @@ namespace RazorPagesContacts
                 if (saPassword != null)
                 {
                     dbProvider = DbProvider.Mssql;
+                    Logger.LogInformation($"MSSQL_SA_PASSWORD not null");
+                    
                 }
                 else
                 {
@@ -164,6 +166,7 @@ namespace RazorPagesContacts
                     string user = "sa";
                     string dbName = "myContacts";
                     connectionString = $@"Server={server};Database={dbName};User Id={user};Password={password};";
+                    Logger.LogInformation($"connectionString value={connectionString}");
                 }
                     break;
                 default:
