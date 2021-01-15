@@ -56,10 +56,8 @@ namespace RazorPagesContacts
 
             services.AddSingleton<AppConfiguration>(new AppConfiguration
             {
-                Logger.LogInformation("dbprovider to string");
                 DatabaseProvider = dbProvider.ToString()
             });
-            Logger.LogInformation("services add razor pages");
             services.AddRazorPages();
 
         }
@@ -68,8 +66,9 @@ namespace RazorPagesContacts
         {
             if (_migrateDatabase)
             {
+                Logger.LogInformation("MigrateDatabase app before");
                 MigrateDatabase(app);
-                Logger.LogInformation("MigrateDatabase app");
+                Logger.LogInformation("MigrateDatabase app after");
             }
 
             app.UseRouting();
