@@ -65,10 +65,10 @@ namespace RazorPagesContacts
 
         public void Configure(IApplicationBuilder app)
         {
-            if (_migrateDatabase)
-            {
-                MigrateDatabase(app);
-            }
+            //if (_migrateDatabase)
+            //{
+            //    MigrateDatabase(app);
+            //}
 
             app.UseRouting();
 
