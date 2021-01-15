@@ -59,7 +59,7 @@ namespace RazorPagesContacts
                 DatabaseProvider = dbProvider.ToString()
             });
 
-            //services.AddRazorPages();
+            services.AddRazorPages();
 
         }
 
