@@ -48,7 +48,7 @@ namespace RazorPagesContacts
                     Logger.LogInformation("Using Mssql database");
                     services.AddDbContext<AppDbContext, MssqlDbContext>(options =>
                               options.UseSqlServer(connectionString));
-                    _migrateDatabase = true;
+                    _migrateDatabase = false;
                     break;
                 default:
                     throw new ArgumentException($"Unknown db provider: {dbProvider}");
@@ -66,9 +66,9 @@ namespace RazorPagesContacts
         {
             if (_migrateDatabase)
             {
-                Logger.LogInformation("MigrateDatabase app before");
+                //Logger.LogInformation("MigrateDatabase app before");
                 MigrateDatabase(app);
-                Logger.LogInformation("MigrateDatabase app after");
+                //Logger.LogInformation("MigrateDatabase app after");
             }
 
             app.UseRouting();
@@ -101,7 +101,7 @@ namespace RazorPagesContacts
                 if (saPassword != null)
                 {
                     dbProvider = DbProvider.Mssql;
-                    Logger.LogInformation($"MSSQL_SA_PASSWORD not null");
+                    //Logger.LogInformation($"MSSQL_SA_PASSWORD not null");
                     
                 }
                 else
@@ -194,7 +194,6 @@ namespace RazorPagesContacts
             {
                 using (var context = serviceScope.ServiceProvider.GetService<AppDbContext>())
                 {
-                    Logger.LogInformation("Context Database Migrate");
                     context.Database.Migrate();
                     
                 }
