@@ -58,7 +58,7 @@ namespace RazorPagesContacts
             {
                 DatabaseProvider = dbProvider.ToString()
             });
-
+            Logger.LogInformation("services add razor pages");
             services.AddRazorPages();
 
         }
