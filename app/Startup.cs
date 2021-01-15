@@ -48,7 +48,7 @@ namespace RazorPagesContacts
                     Logger.LogInformation("Using Mssql database");
                     services.AddDbContext<AppDbContext, MssqlDbContext>(options =>
                               options.UseSqlServer(connectionString));
-                    _migrateDatabase = false;
+                    _migrateDatabase = true;
                     break;
                 default:
                     throw new ArgumentException($"Unknown db provider: {dbProvider}");
