@@ -101,8 +101,7 @@ namespace RazorPagesContacts
                 if (saPassword != null)
                 {
                     dbProvider = DbProvider.Mssql;
-                    //Logger.LogInformation($"MSSQL_SA_PASSWORD not null");
-                    
+                                        
                 }
                 else
                 {
