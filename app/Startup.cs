@@ -68,6 +68,7 @@ namespace RazorPagesContacts
             if (_migrateDatabase)
             {
                 MigrateDatabase(app);
+                Logger.LogInformation("MigrateDatabase app");
             }
 
             app.UseRouting();
@@ -193,6 +194,7 @@ namespace RazorPagesContacts
             {
                 using (var context = serviceScope.ServiceProvider.GetService<AppDbContext>())
                 {
+                    Logger.LogInformation("Context Database Migrate");
                     context.Database.Migrate();
                     
                 }
