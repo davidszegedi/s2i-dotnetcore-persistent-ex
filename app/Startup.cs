@@ -66,8 +66,8 @@ namespace RazorPagesContacts
         {
             if (_migrateDatabase)
             {
-                Logger.LogInformation("Migrate database");
-                MigrateDatabase(app);
+                Logger.LogInformation("Do not migrate database");
+                //MigrateDatabase(app);
                 
             }
 
