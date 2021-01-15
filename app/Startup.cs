@@ -56,6 +56,7 @@ namespace RazorPagesContacts
 
             services.AddSingleton<AppConfiguration>(new AppConfiguration
             {
+                Logger.LogInformation("dbprovider to string");
                 DatabaseProvider = dbProvider.ToString()
             });
             Logger.LogInformation("services add razor pages");
