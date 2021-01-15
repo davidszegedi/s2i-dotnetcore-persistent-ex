@@ -193,8 +193,8 @@ namespace RazorPagesContacts
             {
                 using (var context = serviceScope.ServiceProvider.GetService<AppDbContext>())
                 {
-                    //context.Database.Migrate();
-                    Logger.LogInformation($"commented MigrateDatabase section");
+                    context.Database.Migrate();
+                    
                 }
             }
         }
